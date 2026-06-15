@@ -178,7 +178,8 @@
   </div>
 </section>
 
-<footer>
+<!-- This was the footer earlier used, that is commented out below -->
+<!-- <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <h3>NITA<span>Essentials</span></h3>
@@ -207,22 +208,33 @@
     <span>© 2026 NITA Essentials — Built by students, for students ❤️</span>
     <span style="font-size:0.75rem; opacity:0.7;">Some links are affiliate links.</span>
   </div>
-</footer>
+</footer> -->
+
+<!-- Below is the New Footer -->
+<div id="footer"></div>
+
 
 <script>
+  // For Hamburger Menu
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  document.querySelectorAll('.accordion-header').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      document.querySelectorAll('.tip-card').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-      });
+      const body = btn.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.accordion-body.open').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.accordion-header.open').forEach(b => b.classList.remove('open'));
+      if (!isOpen) { body.classList.add('open'); btn.classList.add('open'); }
     });
+  });
+
+  //  For loading footer.html
+  fetch('./footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
   });
 </script>
 
