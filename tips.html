@@ -230,14 +230,14 @@
     });
   });
   
-  // For different category buttons
+  // For different tips category buttons
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const cat = btn.dataset.cat;
-      document.querySelectorAll('.product-card').forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      document.querySelectorAll('.tip-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
       });
     });
   });
