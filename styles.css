@@ -211,6 +211,29 @@ nav {
   font-size: 0.8125rem;
 }
 
+/* code for the discord and start contri buttonn in the academics tab */
+.button-group{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.discord-btn{
+  background:#5865F2;
+}
+
+.discord-btn:hover{
+  background:#ffffff;
+  color: #5865F2;
+}
+
+.discord-btn img{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+}
 /* ===== CARDS ===== */
 .card-grid {
   display: grid;
