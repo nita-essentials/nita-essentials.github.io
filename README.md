@@ -119,7 +119,7 @@ Once verified, your contribution may be merged into the project.
 
 Some links on NITA Essentials may be affiliate links.
 
-This means that if you purchase a product through one of these links, I may earn a small commission at **no additional cost to you**.
+This means that if you purchase a product through one of these links, NITA-Essential earns a small commission at **no additional cost to you**.
 
 The commissions earned help:
 
