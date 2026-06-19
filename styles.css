@@ -422,6 +422,38 @@ nav {
   line-height: 1.55;
 }
 
+/* ===== Buy and sell btn ===== */
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+    border-color: #25D366 !important;
+    border-width: 1.5px !important;
+    
+}
+
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #4AE07D !important;
+    border-color: #4AE07D !important;
+    color: white !important;
+}
+.whatsapp-btn span {
+    color:   #25D366 !important;
+}
+
+.whatsapp-btn:hover span {
+    color: white !important;
+}
+
+
+
 /* ===== ACCORDION ===== */
 .accordion-item {
   border: 1px solid var(--border);
@@ -715,6 +747,7 @@ footer {
   display: flex;
   gap: 0.625rem;
   align-items: flex-start;
+  grid-column: 1 / -1;
 }
 
 /* ===== MOBILE ===== */
