@@ -211,6 +211,29 @@ nav {
   font-size: 0.8125rem;
 }
 
+/* code for the discord and start contri buttonn in the academics tab */
+.button-group{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.discord-btn{
+  background:#5865F2;
+}
+
+.discord-btn:hover{
+  background:#ffffff;
+  color: #5865F2;
+}
+
+.discord-btn img{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+}
 /* ===== CARDS ===== */
 .card-grid {
   display: grid;
@@ -398,6 +421,38 @@ nav {
   color: var(--text);
   line-height: 1.55;
 }
+
+/* ===== Buy and sell btn ===== */
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+    border-color: #25D366 !important;
+    border-width: 1.5px !important;
+    
+}
+
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #4AE07D !important;
+    border-color: #4AE07D !important;
+    color: white !important;
+}
+.whatsapp-btn span {
+    color:   #25D366 !important;
+}
+
+.whatsapp-btn:hover span {
+    color: white !important;
+}
+
+
 
 /* ===== ACCORDION ===== */
 .accordion-item {
@@ -738,6 +793,7 @@ footer {
   display: flex;
   gap: 0.625rem;
   align-items: flex-start;
+  grid-column: 1 / -1;
 }
 
 /* ===== MOBILE ===== */
