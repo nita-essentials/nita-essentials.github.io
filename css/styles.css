@@ -151,6 +151,8 @@ nav {
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
   color: var(--navy);
+  /* below the one line code is for scroll positioning, so that the content doesn't overlaps */
+  scroll-margin-top: 130px;
 }
 
 .section-sub {
@@ -246,6 +248,71 @@ nav {
   color: #ffffff;
 }
 
+/*Back to Top Button */
+#backToTopBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  background: rgba(36, 127, 224, 0.786);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+
+  transition: all 0.3s ease;
+
+  z-index: 9999;
+}
+
+
+#backToTopBtn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  color: #1d4ed8;
+
+  box-shadow:
+    0 12px 35px rgba(37, 99, 235, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTopBtn:active {
+  transform: scale(0.95);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 /* ===== CARDS ===== */
 .card-grid {
   display: grid;
@@ -787,6 +854,19 @@ footer {
   }
 
   .stats-inner { gap: 1.5rem; }
+
+  /* Nav Of the Acedemic section */
+  #academics-nav .filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  #academics-nav .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

@@ -58,17 +58,27 @@
 
     <section class="section">
       <div class="container">
-        <!-- Removed the notice for sometime -->
-        <!-- <div class="notice" style="margin-bottom:2rem;">
+        <div class="notice" style="margin-bottom:2rem;">
           <span>⚠️</span>
           <div>
             This section is being actively built. Academic resources vary by branch and year. If you have recommendations, please
             <a href="contribute.html" style="color:inherit; font-weight:600;">contribute</a>.
           </div>
-        </div> -->
+        </div>
 
+        <div id="academics-nav" style="padding: 0.5rem 1rem; position: sticky; top: 60px; z-index: 99;  backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%);">
+            <div class="container">
+              <div class="filter-bar" style="margin-bottom: 0;">
+                <a href="#online-resources" class="filter-btn btn btn-outline">Online Resources</a>
+                <a href="#tools" class="filter-btn btn btn-outline">Tools & Equipment</a>
+                <a href="#first-year" class="filter-btn btn btn-outline">1st Year</a>
+                <a href="#second-year" class="filter-btn btn btn-outline">2nd Year</a>
+              </div>
+            </div>
+        </div>
+        
         <!-- Online Resources -->
-        <h2 class="section-title" style="margin-bottom:0.5rem;">Useful Online Resources</h2>
+        <h2 class="section-title" id="online-resources"style="margin-bottom:0.5rem;">Useful Online Resources</h2>
         <p class="section-sub">Consistently useful throughout your degree, regardless of branch.</p>
 
         <div class="card-grid">
@@ -107,7 +117,7 @@
         </div>
 
         <!-- Tools & Equipment -->
-        <h2 class="section-title" style="margin-bottom:0.5rem; margin-top: 4rem;">Tools & Equipment</h2>
+        <h2 class="section-title" id="tools" style="margin-bottom:0.5rem; margin-top: 4rem;">Tools & Equipment</h2>
         <p class="section-sub">Physical tools required for coursework. Check with your seniors before buying.</p>
 
         <div class="product-grid" style="margin-bottom:3rem;">
@@ -160,7 +170,7 @@
         <!-- For BS - MS -->
 
         <!-- First Year Subjects -->
-        <h2 class="section-title" style="margin-bottom:0.5rem;">First Year Subjects</h2>
+        <h2 class="section-title" id="first-year" style="margin-bottom:0.5rem;">First Year Subjects</h2>
         <p class="section-sub" style="margin-bottom:0.5rem;">Common subjects across all branches.</p>
 
         <div class="card" style="margin-bottom:2rem;">
@@ -185,7 +195,7 @@
         </div>
 
         <!-- 2nd Year Subjects -->
-        <h2 class="section-title" style="margin-bottom:0.5rem;">Second Year Subjects</h2>
+        <h2 class="section-title" id="second-year" style="margin-bottom:0.5rem;">Second Year Subjects</h2>
         <p class="section-sub">Subjects specific to each branch will be added as contributions come in.</p>
 
         <div class="card-grid">
@@ -227,6 +237,10 @@
       </div>
     </section>
 
+    <button id="backToTopBtn" aria-label="Back to Top">
+      ↑
+    </button>
+
     <div id="footer"></div>
 
     <script>
@@ -254,6 +268,52 @@
         .then((data) => {
           document.getElementById('footer').innerHTML = data;
         });
+
+        // For academics navbar
+        const academicsNav = document.getElementById('academics-nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    academicsNav.style.background = 'rgba(255, 255, 255, 0.45)';
+    academicsNav.style.backdropFilter = 'blur(16px) saturate(180%)';
+    academicsNav.style.webkitBackdropFilter = 'blur(16px) saturate(180%)';
+    academicsNav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.06)';
+    academicsNav.style.borderBottom = '1px solid rgba(255,255,255,0.3)';
+  } else {
+    academicsNav.style.background = 'transparent';
+    academicsNav.style.backdropFilter = 'none';
+    academicsNav.style.webkitBackdropFilter = 'none';
+    academicsNav.style.boxShadow = 'none';
+    academicsNav.style.borderBottom = 'none';
+  }
+
+// Back To Top Button
+const backToTopBtn = document.getElementById("backToTopBtn");
+const footer = document.getElementById("footer");
+
+window.addEventListener("scroll", () => {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  // Show button after scrolling down
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+
+  // Hide button when footer enters the viewport
+  if (footerTop < windowHeight) {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+});
     </script>
 
     <script src="notices.js"></script>
