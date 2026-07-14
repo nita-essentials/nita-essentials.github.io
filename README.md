@@ -1,171 +1,268 @@
 # NITA Essentials
 
-A student-driven resource hub designed to help NIT Agartala students make informed decisions throughout their college journey.
+A student-driven resource hub that helps students of the **National Institute of Technology Agartala (NIT Agartala)** make informed decisions throughout their college journey.
 
-## Objective
-
-When I first joined college, I was often confused about many practical aspects of student life:
-
-* What books and academic materials should I follow?
-* Which gadgets, stationery, and hostel essentials are actually worth buying?
-* What resources can help me perform better academically?
-* What sports and extracurricular items are useful?
-* What mistakes should I avoid during college?
-
-Most of this information was scattered across conversations with seniors, friends, and online sources. Over time, I learned what worked, what didn't, and what I wish I had known earlier.
-
-**NITA Essentials** was created to bring all of that knowledge together in one place, helping students save time, avoid unnecessary expenses, and make better decisions throughout their college life.
+Whether you're joining NITA for the first time or preparing for graduation, NITA Essentials brings together practical advice, academic resources, buying guides, sports recommendations, student projects, and community contributions in one place.
 
 ---
 
-## What You'll Find Here
+## 🌐 Live Website
 
-### 📚 Academic Resources
-
-* Recommended books and study materials
-* Subject-wise resources
-* Useful websites and online learning platforms
-* Productivity tools and software
-* Academic guidance and tips
-
-### 🛒 Essential Purchases
-
-* Hostel essentials
-* Stationery recommendations
-* Electronics and gadgets
-* Daily-use college items
-* Budget-friendly buying suggestions
-
-### 🏃 Sports & Extracurriculars
-
-* Sports equipment recommendations
-* Fitness-related resources
-* Club and activity-related suggestions
-
-### 💡 College Tips
-
-* Things every student should know
-* Common mistakes to avoid
-* Time-management advice
-* Productivity strategies
-* Practical lessons learned from experience
+https://nita-essentials.github.io/
 
 ---
 
-## Best Way to Use NITA Essentials
+# 📖 About the Project
 
-This platform is intended to serve as a reference guide throughout your college journey.
+When new students join college, they often have the same questions:
 
-You can:
+- Which books should I study from?
+- What hostel essentials are actually worth buying?
+- Which calculator, laptop, or stationery should I get?
+- What academic resources do seniors recommend?
+- What sports equipment should I buy?
+- What common mistakes should I avoid?
 
-1. Explore recommendations before making purchases.
-2. Discover useful academic resources.
-3. Learn from experiences shared by students.
-4. Find practical solutions to common college-life problems.
-5. Contribute your own knowledge to help future students.
+Most of this information is scattered across WhatsApp groups, seniors, friends, and countless conversations.
 
-Whether you're a first-year student or approaching graduation, there is likely something useful here for you.
-
----
-
-## Why This Project Exists
-
-The goal is simple:
-
-> Help students spend less time figuring things out and more time learning, building, exploring, and enjoying college life.
-
-Instead of searching through multiple sources or relying solely on word-of-mouth advice, students can access curated recommendations and practical guidance in one place.
+**NITA Essentials** was created to collect that knowledge in one place, helping students save time, avoid unnecessary expenses, and make better decisions throughout college.
 
 ---
 
-## Contributing
+# ✨ Features
 
-NITA Essentials is a community-driven project, and contributions from students are always welcome.
+- 📚 Academic resources and study materials
+- 🛒 Curated hostel and college essentials
+- 🏀 Sports equipment recommendations
+- 💡 Practical college tips
+- 🚀 Student project showcase
+- 🤝 Community contribution system
+- 📱 Responsive design for desktop and mobile
+- 🔍 Category filtering
+- 🔔 Notice system
+- ⬆️ Auto-hide navigation while scrolling
+- 🧩 Modular reusable footer
+- 🎯 Easy-to-maintain HTML structure
+
+---
+
+# 📄 Website Pages
+
+The website currently contains the following sections:
+
+- 🏠 Home
+- 📚 Academics
+- 🛒 Essentials
+- 🏀 Sports
+- 🚀 Student Projects
+- 💡 Tips
+- 🤝 Contribute
+- ℹ️ About
+
+Each section focuses on a different aspect of student life and is designed to be easy to browse.
+
+---
+
+# 📚 What You'll Find
+
+## Academics
+
+- Study materials
+- Books
+- Online resources
+- Academic tools
+- Department resources
+- Semester resources
+
+## Essentials
+
+- Hostel items
+- Electronics
+- Stationery
+- Daily-use products
+- Budget recommendations
+
+## Sports
+
+- Basketball gear
+- Badminton equipment
+- Sports accessories
+- Campus activity recommendations
+
+## Student Projects
+
+- Student-built websites
+- Campus tools
+- Open-source projects
+- Research implementations
+
+## Tips
+
+- Productivity advice
+- Time management
+- College survival tips
+- Practical lessons from seniors
+
+---
+
+# 📁 Project Structure
+
+```
+nita-essentials.github.io/
+│
+├── css/
+│   └── styles.css
+│
+├── icon/
+│
+├── about.html
+├── academics.html
+├── contribute.html
+├── essentials.html
+├── footer.html
+├── index.html
+├── notices.js
+├── projects.html
+├── sports.html
+├── tips.html
+└── README.md
+```
+
+---
+
+# 🤝 Contributing
+
+NITA Essentials is a community-driven project, and contributions are always welcome.
 
 You can contribute by:
 
-* Adding useful resources
-* Suggesting better alternatives
-* Sharing college-life tips
-* Correcting outdated information
-* Improving website functionality
-* Enhancing documentation
+- Adding useful resources
+- Improving existing content
+- Fixing bugs
+- Improving documentation
+- Sharing student projects
+- Suggesting better products
+- Adding college tips
 
-### Contribution Policy
+---
 
-To maintain the quality and reliability of the information provided:
+## How to Contribute
 
-* Anyone can submit a Pull Request.
-* Every contribution will be reviewed before acceptance.
-* Contributions may be modified, requested for revision, or rejected if they contain inaccurate, misleading, outdated, promotional, or low-quality information.
-* Acceptance of contributions is subject to verification by the maintainers.
-
-This review process ensures that students receive trustworthy and useful recommendations.
-
-### How to Contribute
-
-1. Fork the repository.
+1. Fork this repository.
 2. Create a new branch.
+
+```
+git checkout -b feature/your-feature
+```
+
 3. Make your changes.
-4. Commit your updates.
-5. Open a Pull Request.
-6. Wait for review and verification.
 
-Once verified, your contribution may be merged into the project.
+4. Commit your work.
 
----
+```
+git commit -m "Describe your changes"
+```
 
-## Affiliate Disclosure
+5. Push the branch.
 
-Some links on NITA Essentials may be affiliate links.
+```
+git push origin feature/your-feature
+```
 
-This means that if you purchase a product through one of these links, NITA-Essential earns a small commission at **no additional cost to you**.
+6. Open a Pull Request.
 
-The commissions earned help:
-
-* Maintain and improve the website.
-* Add new resources and recommendations.
-* Cover operational and development expenses.
-* Support my educational expenses, including tuition fees.
-
-### Commitment to Honest Recommendations
-
-Products and resources featured on this platform are included because they have been personally used, researched, recommended by students, or found genuinely useful during college life.
-
-Affiliate commissions do **not** determine which products are recommended.
-
-The primary goal of this platform is to help students make informed decisions and avoid unnecessary purchases.
-
-Every purchase made through an affiliate link helps sustain this project and supports my education while allowing the platform to remain freely accessible to all students.
+Every contribution is reviewed before being merged.
 
 ---
 
-## Disclaimer
+# 📋 Contribution Policy
 
-The recommendations, opinions, and experiences shared on this website are based on personal experience, research, and community contributions.
+To keep recommendations trustworthy:
 
-Students should use their own judgment before making purchasing, academic, or personal decisions.
+- All submissions are manually reviewed.
+- Promotional or misleading content is rejected.
+- Inaccurate information may be edited or removed.
+- Contributors may be asked to revise their submissions before approval.
 
-Individual needs and preferences may vary.
-
----
-
-## Future Goals
-
-* Expand academic resources across departments.
-* Add student-contributed recommendations.
-* Improve search and navigation.
-* Create department-specific guides.
-* Build a larger community knowledge base for NIT Agartala students.
+The goal is to ensure students receive useful, honest, and reliable recommendations.
 
 ---
 
-## License
+## 📷 Screenshots
 
-This project is open-source and available under the GPL 2.0 License.
+### Home Page
+
+![Home](assets/screenshots/home.png)
+
+### Academics
+
+![Academics](assets/screenshots/academics.png)
+
+### Essentials
+
+![Essentials](assets/screenshots/essentials.png)
+
+### Sports
+
+![Sports](assets/screenshots/sports.png)
+
+### Projects
+
+![Projects](assets/screenshots/projects.png)
 
 ---
 
-## Built by Students, for Students ❤️
+# 🛣️ Roadmap
 
-If NITA Essentials helps you, consider contributing to make it even better for future students.
+Future improvements include:
+
+- 🌙 Dark mode
+- 🔍 Global search
+- 📖 Student blog
+- 📱 Improved mobile navigation
+- 📚 Department-specific academic resources
+- 🎓 Career roadmaps
+- 🏆 More student project showcases
+- 🤖 Better contribution workflow
+
+---
+
+# 💰 Affiliate Disclosure
+
+Some product links may be affiliate links.
+
+If you purchase through one of these links, NITA Essentials may earn a small commission **at no additional cost to you.**
+
+Affiliate commissions help support:
+
+- Website maintenance
+- Hosting
+- Development
+- New resources
+- Continued improvements
+
+Recommendations are never influenced solely by affiliate earnings.
+
+---
+
+# ⚠️ Disclaimer
+
+Recommendations on this website are based on personal experience, research, and community contributions.
+
+Students should always use their own judgment before making purchasing, academic, or personal decisions.
+
+Individual needs may vary.
+
+---
+
+# 📜 License
+
+This project is licensed under the **GPL-2.0 License**.
+
+---
+
+# ❤️ Built by Students, for Students
+
+If NITA Essentials helped you, consider contributing so future students can benefit too.
+
+Every contribution—whether it's a tip, resource, bug fix, or new feature—helps make the project better.
