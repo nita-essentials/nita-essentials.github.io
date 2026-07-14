@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Projects - National Institute of Technology Agartala Essentials</title>
+  <meta name="description" content="Explore projects built by NIT Agartala students - web apps, tools, research, and open-source contributions showcasing campus innovation." />
+  
+  <!-- ICON For NITA-Essential -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+  <link rel="manifest" href="./icon/site.webmanifest">
+  <link rel="stylesheet" href="./css/styles.css" />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8GYV0HE63"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L8GYV0HE63');
+  </script>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">NITA<span>Essentials</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="essentials.html">Essentials</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>      
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="contribute.html">Contribute</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>🚀 Student Projects</h1>
+    <p>Showcasing tools, applications, and innovations built by NIT Agartala students — from web apps to research implementations, all solving real problems.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container" id="all-projects">
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar filter-mb">
+      <button class="filter-btn active" data-cat="all">All Projects</button>
+      <button class="filter-btn" data-cat="Web App">Web Apps</button>
+      <button class="filter-btn" data-cat="Tool">Tools & Utilities</button>
+      <button class="filter-btn" data-cat="Research">Research</button>
+      <button class="filter-btn" data-cat="Open Source">Open Source</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="card-grid" id="projects-grid">
+
+      <!-- NITA Faculty Directory Project -->
+      <div class="project-item project-full" data-cat="Web App">
+        <div class="project-card">
+          
+          <!-- Project Header -->
+          <div class="project-header">
+            <div>
+              <div class="project-category-wrapper">
+                <span class="project-category">Web App · Data Extraction</span>
+              </div>
+              <h3 class="project-title">NITA Faculty Directory</h3>
+              <p class="project-description">Details of All the Faculties of NIT Agartala</p>
+            </div>
+            <div class="project-actions">
+              <a href="https://pragyaangaur.github.io/NITA-Faculty-Directory/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                Open ↗
+              </a>
+              <a href="https://github.com/pragyaangaur/NITA-Faculty-Directory" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                GitHub →
+              </a>
+            </div>
+          </div>
+
+          <!-- Author Credit -->
+          <div class="project-author">
+            <p class="project-author-text">
+              <strong>Built by:</strong> <a href="https://github.com/pragyaangaur" target="_blank" rel="noopener noreferrer" class="project-author-link">Pragyaan Gaur</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Placeholder for more projects -->
+      <div class="project-item project-full" data-cat="Tool,Research,Open Source">
+        <div class="project-placeholder">
+          <div class="project-placeholder-icon">🚧</div>
+          <h3 class="project-placeholder-title">More Projects Coming Soon</h3>
+          <p class="project-placeholder-text">
+            Built a web app, automation tool, research implementation, or campus utility? We want to feature it here.
+          </p>
+          <a href="contribute.html#contributions" class="btn btn-primary btn-sm">Submit Your Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="notice notice-mt">
+      <span>💻</span>
+      <div>
+        Have a side project, coursework implementation, or open-source contribution? 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdO_3fpScFzIBaKlsXUSYHU2pd4UCEIIFFw8a9D_o3gfkbqiw/viewform?usp=header" class="notice-link">Submit it via this form</a> 
+        or open a Pull Request on GitHub. Every project goes through a quick review before being featured.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<button id="backToTopBtn" aria-label="Back to Top">
+  ↑
+</button>
+
+<div id="footer"></div>
+
+<script>
+  // For Hamburger Menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // For category filtering
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    document.querySelectorAll('.filter-btn').forEach(b =>
+      b.classList.remove('active')
+    );
+
+    btn.classList.add('active');
+
+    const cat = btn.dataset.cat;
+
+    document.querySelectorAll('.project-item').forEach(card => {
+
+      const categories = card.dataset.cat
+        .split(",")
+        .map(item => item.trim());
+
+      if (cat === "all" || categories.includes(cat)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+  });
+});
+
+  // For loading footer.html
+  fetch('./footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+
+  // Back To Top Button
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  const footer = document.getElementById("footer");
+
+  window.addEventListener("scroll", () => {
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+
+    if (footerTop < windowHeight) {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+<script src="notices.js"></script>
+</body>
+</html>
