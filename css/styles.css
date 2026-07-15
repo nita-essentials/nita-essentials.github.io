@@ -165,19 +165,6 @@ nav.nav-hidden {
   margin-bottom: 2.5rem;
   font-size: 0.9375rem;
 }
-/* Basketbatball link - Basketball Club */
-.hoopers-link {
-  padding: 2px;
-  border: 5px;
-  text-decoration: none;
-  color: var(--teal-dark);
-  font-weight: 600;
-  transition: all 0.15s;
-}
-
-.hoopers-link:hover {
-  color: #c13584;
-}
 
 /* ===== BUTTONS ===== */
 .btn {
