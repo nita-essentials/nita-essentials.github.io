@@ -240,11 +240,18 @@
             <a href="https://drive.google.com/drive/folders/1Q5SYWkoxrlHZ2juzQZllOxuiueOO2hQu" target="_blank" class="btn btn-outline btn-sm">Books →</a>
           </div>
           <!-- Bio Tech -->
-           <div class="card">
+          <div class="card">
               <div class="card-icon">🧬</div>
               <h3>BioTech</h3>
               <p>PYQs, Notes, and study materials for Biotechnology Engineering.</p>
               <a href="https://drive.google.com/drive/folders/1FrCEbJWhtHHDA8gC0CYgYGLS4VSVGZnO?usp=drive_link" target="_blank" class="btn btn-outline btn-sm">All Materials →</a>
+            </div>
+            <!-- EIE -->
+           <div class="card">
+              <div class="card-icon">🗜️</div>
+              <h3>EIE</h3>
+              <p>PYQs, Notes, and study materials for EIE Engineering.</p>
+              <a href="https://drive.google.com/drive/folders/1cHGINfaS5PbQB8vfhsb7VsU1w4pqiSO2" target="_blank" class="btn btn-outline btn-sm">All Materials →</a>
             </div>
         </div>
 
@@ -292,8 +299,52 @@
         });
 
         // For academics navbar
+        const navbar = document.querySelector('nav');
         const academicsNav = document.getElementById('academics-nav');
+
+let lastScrollY = window.scrollY;
+const SCROLL_THRESHOLD = 10;
+
 window.addEventListener('scroll', () => {
+
+  const currentScrollY = window.scrollY;
+
+  // ---------- Navbar hide/show ----------
+  if (navbar) {
+
+    if (currentScrollY <= 0) {
+      navbar.classList.remove('nav-hidden');
+
+      if (academicsNav) {
+        academicsNav.style.top = '60px';
+      }
+
+      lastScrollY = currentScrollY;
+    }
+    else if (Math.abs(currentScrollY - lastScrollY) >= SCROLL_THRESHOLD) {
+
+      if (currentScrollY > lastScrollY) {
+        navbar.classList.add('nav-hidden');
+
+        if (academicsNav) {
+          academicsNav.style.top = '0';
+        }
+
+      } else {
+
+        navbar.classList.remove('nav-hidden');
+
+        if (academicsNav) {
+          academicsNav.style.top = '60px';
+        }
+
+      }
+
+      lastScrollY = currentScrollY;
+    }
+  }
+
+  // ---------- Existing academics navbar styling ----------
   if (window.scrollY > 400) {
     academicsNav.style.background = 'rgba(255, 255, 255, 0.45)';
     academicsNav.style.backdropFilter = 'blur(16px) saturate(180%)';
@@ -337,7 +388,6 @@ backToTopBtn.addEventListener("click", () => {
 });
 });
     </script>
-
     <script src="notices.js"></script>
   </body>
 </html>
