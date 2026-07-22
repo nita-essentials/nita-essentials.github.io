@@ -14,8 +14,8 @@
 
 // ── Load Nav ────────────────────────────────────────────────────
 fetch('./nav.html')
-  .then(r => r.text())
-  .then(html => {
+.then(r => r.text())
+.then(html => {
         //For loading the nav
         const navContainer = document.getElementById('nav');
         navContainer.innerHTML = html;
@@ -37,8 +37,31 @@ fetch('./nav.html')
         });
         }
 
-        // ── Active link highlight ──
-        // Matches current filename (e.g. "sports.html") to nav hrefs
+//  ───── Themes ────────────────────────────────────────────────
+
+const toggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+// Apply saved theme on load
+const saved = localStorage.getItem('theme') || 'light';
+root.setAttribute('data-theme', saved);
+toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+
+toggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+});
+// Below is to check the users default theme
+if (!localStorage.getItem('theme')) {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+}
+
+// ── Active link highlight ──
+// Matches current filename (e.g. "sports.html") to nav hrefs
         const currentPage = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-links a').forEach(a => {
         if (a.getAttribute('href') === currentPage) {
@@ -47,13 +70,13 @@ fetch('./nav.html')
         });
 
 
-        // ===== Auto-hide Navbar =====
+// ===== Auto-hide Navbar =====
             const navbar = document.querySelector('nav');
             const academicsNav = document.getElementById('academics-nav');
 
             if (navbar) {
                 let lastScrollY = window.scrollY;   
-                const THRESHOLD = 5;   
+                const THRESHOLD = 10;   
 
                 window.addEventListener('scroll', () => {
                     const currentScrollY = window.scrollY;
@@ -84,7 +107,7 @@ fetch('./nav.html')
                     } 
                     else {
                         // Scrolling up
-                        console.log('Scrolling up - removing nav-hidden');
+                        // console.log('Scrolling up - removing nav-hidden'); // i had used this just for testing
                         navbar.classList.remove('nav-hidden');
                         if (academicsNav) {
                             academicsNav.style.top = '60px';
@@ -94,8 +117,7 @@ fetch('./nav.html')
                 });
             }
 })
-
-  .catch(err => console.error('components.js: failed to load nav.html', err));
+.catch(err => console.error('components.js: failed to load nav.html', err));
 
 // ── Load Footer ─────────────────────────────────────────────────
 fetch('./footer.html')
@@ -106,3 +128,4 @@ fetch('./footer.html')
     footerContainer.innerHTML = html;
   })
   .catch(err => console.error('components.js: failed to load footer.html', err));
+
