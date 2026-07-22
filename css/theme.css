@@ -1,3 +1,35 @@
+/* ── Smooth theme transition ── */
+body,
+.hero,
+.stats-bar,
+.section,
+.section-alt,
+.card,
+.card-icon,
+.product-card,
+.product-img,
+.tip-card,
+.accordion-item,
+.accordion-header,
+.accordion-body,
+.filter-btn,
+.notice,
+.tag,
+.tag-amber,
+.page-hero,
+.project-card,
+.project-placeholder,
+footer,
+.footer-bottom,
+nav,
+#nav,
+#academics-nav {
+  transition: background-color 0.7s ease,
+              color 0.7s ease,
+              border-color 0.7s ease,
+              box-shadow 0.7s ease !important;
+}
+
 /* ========= DARK MODE ========= */
 [data-theme="dark"] {
   --teal: #38bdf8;

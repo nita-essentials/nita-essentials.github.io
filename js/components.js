@@ -54,6 +54,7 @@ toggle.addEventListener('click', () => {
   localStorage.setItem('theme', next);
   toggle.textContent = next === 'dark' ? '☀️' : '🌙';
 });
+
 // Below is to check the users default theme
 if (!localStorage.getItem('theme')) {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
