@@ -25,23 +25,7 @@
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">NITA<span>Essentials</span></a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="academics.html">Academics</a></li>
-      <li><a href="essentials.html">Essentials</a></li>
-      <li><a href="sports.html">Sports</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="tips.html">Tips</a></li>
-      <li><a href="contribute.html" class="active">Contribute</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="nav"></div>
 
 <div class="page-hero">
   <div class="container">
@@ -158,58 +142,7 @@
 
 <div id="footer"></div>
 
-<script>
-  // ===== Mobile navigation =====
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  }
-
-  // ===== Auto-hide navbar on scroll =====
-  const navbar = document.querySelector('nav');
-
-  if (navbar) {
-    let lastScrollY = window.scrollY;
-    const SCROLL_THRESHOLD = 10;
-
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-
-      // Always show navbar at the top
-      if (currentScrollY <= 0) {
-        navbar.classList.remove('nav-hidden');
-        lastScrollY = currentScrollY;
-        return;
-      }
-
-      // Ignore tiny scroll movements
-      if (Math.abs(currentScrollY - lastScrollY) < SCROLL_THRESHOLD) {
-        return;
-      }
-
-      if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        navbar.classList.add('nav-hidden');
-      } else {
-        // Scrolling up
-        navbar.classList.remove('nav-hidden');
-      }
-
-      lastScrollY = currentScrollY;
-    });
-  }
-
-  // ===== Load footer =====
-  fetch('./footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
-</script>
+<script src="./js/components.js"></script>
 <script src="notices.js"></script>
 </body>
 </html>

@@ -29,23 +29,7 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">NITA<span>Essentials</span></a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="academics.html" class="active">Academics</a></li>
-          <li><a href="essentials.html">Essentials</a></li>
-          <li><a href="sports.html">Sports</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="tips.html">Tips</a></li>
-          <li><a href="contribute.html">Contribute</a></li>
-        </ul>
-      </div>
-    </nav>
+  <div id="nav"></div>
 
     <div class="page-hero">
       <div class="container">
@@ -56,7 +40,7 @@
       </div>
     </div>
 
-    <section class="section">
+    <section class="section" style="padding-top: 5rem;">
       <div class="container">
         <div class="notice" style="margin-bottom:2rem;">
           <span>⚠️</span>
@@ -66,7 +50,7 @@
           </div>
         </div>
 
-        <div id="academics-nav" style="padding: 0.5rem 1rem; position: sticky; top: 60px; z-index: 99;  backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%);">
+        <div id="academics-nav" >
             <div class="container">
               <div class="filter-bar" style="margin-bottom: 0;">
                 <a href="#online-resources" class="filter-btn btn btn-outline">Online Resources</a>
@@ -273,112 +257,35 @@
     <div id="footer"></div>
 
     <script>
-      // For Hamburger Menu
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('nav-links');
-      hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+      // Back To Top Button
+      const backToTopBtn = document.getElementById("backToTopBtn");
+      const footer = document.getElementById("footer");
 
-      document.querySelectorAll('.accordion-header').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const body = btn.nextElementSibling;
-          const isOpen = body.classList.contains('open');
-          document.querySelectorAll('.accordion-body.open').forEach((b) => b.classList.remove('open'));
-          document.querySelectorAll('.accordion-header.open').forEach((b) => b.classList.remove('open'));
-          if (!isOpen) {
-            body.classList.add('open');
-            btn.classList.add('open');
+        window.addEventListener("scroll", () => {
+            const footerTop = footer.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+              // Show button after scrolling down
+              if (window.scrollY > 300) {
+                backToTopBtn.classList.add("show");
+              } else {
+                backToTopBtn.classList.remove("show");
+              }
+              // Hide button when footer enters the viewport
+              if (footerTop < windowHeight) {
+                backToTopBtn.classList.remove("show");
+              }
           }
+        );
+
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
         });
-      });
-
-      // For loading footer.html
-      fetch('./footer.html')
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById('footer').innerHTML = data;
-        });
-
-        // For academics navbar
-        const navbar = document.querySelector('nav');
-        const academicsNav = document.getElementById('academics-nav');
-
-let lastScrollY = window.scrollY;
-const SCROLL_THRESHOLD = 10;
-
-window.addEventListener('scroll', () => {
-
-  const currentScrollY = window.scrollY;
-
-  // ---------- Navbar hide/show ----------
-  if (navbar) {
-    if (currentScrollY <= 0) {
-      navbar.classList.remove('nav-hidden');
-      if (academicsNav) {
-        academicsNav.style.top = '60px';
-      }
-      lastScrollY = currentScrollY;
-    }
-    else if (Math.abs(currentScrollY - lastScrollY) >= SCROLL_THRESHOLD) {
-      if (currentScrollY > lastScrollY) {
-        navbar.classList.add('nav-hidden');
-        if (academicsNav) {
-          academicsNav.style.top = '0';
-        }
-      } else {
-        navbar.classList.remove('nav-hidden');
-        if (academicsNav) {
-          academicsNav.style.top = '60px';
-        }
-      }
-      lastScrollY = currentScrollY;
-    }
-  }
-
-  // ---------- Existing academics navbar styling ----------
-  if (window.scrollY > 400) {
-    academicsNav.style.background = 'rgba(255, 255, 255, 0.45)';
-    academicsNav.style.backdropFilter = 'blur(16px) saturate(180%)';
-    academicsNav.style.webkitBackdropFilter = 'blur(16px) saturate(180%)';
-    academicsNav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.06)';
-    academicsNav.style.borderBottom = '1px solid rgba(255,255,255,0.3)';
-  } else {
-    academicsNav.style.background = 'transparent';
-    academicsNav.style.backdropFilter = 'none';
-    academicsNav.style.webkitBackdropFilter = 'none';
-    academicsNav.style.boxShadow = 'none';
-    academicsNav.style.borderBottom = 'none';
-  }
-
-// Back To Top Button
-const backToTopBtn = document.getElementById("backToTopBtn");
-const footer = document.getElementById("footer");
-
-window.addEventListener("scroll", () => {
-  const footerTop = footer.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
-
-  // Show button after scrolling down
-  if (window.scrollY > 300) {
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
-  }
-
-  // Hide button when footer enters the viewport
-  if (footerTop < windowHeight) {
-    backToTopBtn.classList.remove("show");
-  }
-});
-
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-});
     </script>
     <script src="notices.js"></script>
+    <script src="./js/components.js"></script>
   </body>
 </html>
 
