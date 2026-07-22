@@ -35,6 +35,19 @@ body {
   line-height: 1.6;
   font-size: 16px;
 }
+/* ========THEMES======== */
+
+
+/* ── Theme toggle button ── */
+[data-theme="dark"] #theme-toggle {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* ── Academics sticky nav ── */
+[data-theme="dark"] #academics-nav {
+  background: rgba(15, 23, 42, 0.85);
+}
 
 /* ===== NAVIGATION ===== */
 #nav {
@@ -229,6 +242,23 @@ body {
 .btn-sm {
   padding: 0.4rem 0.875rem;
   font-size: 0.8125rem;
+}
+
+/* Theme toggle button base styles */
+#theme-toggle {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.35rem 0.5rem;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+#theme-toggle:hover {
+  background: rgba(255,255,255,0.15);
 }
 
 /* code for the discord and start contri button in the academics tab */
