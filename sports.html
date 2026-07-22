@@ -174,48 +174,7 @@
 <div id="footer"></div>
 
 <script>
-  // ===== Mobile Navigation =====
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  }
-
-  // ===== Auto-hide Navbar =====
-  const navbar = document.querySelector('nav');
-
-  if (navbar) {
-    let lastScrollY = window.scrollY;
-    const SCROLL_THRESHOLD = 10;
-
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-
-      // Always show navbar at the top
-      if (currentScrollY <= 0) {
-        navbar.classList.remove('nav-hidden');
-        lastScrollY = currentScrollY;
-        return;
-      }
-
-      // Ignore tiny scroll movements
-      if (Math.abs(currentScrollY - lastScrollY) < SCROLL_THRESHOLD) {
-        return;
-      }
-
-      if (currentScrollY > lastScrollY) {
-        navbar.classList.add('nav-hidden');
-      } else {
-        navbar.classList.remove('nav-hidden');
-      }
-
-      lastScrollY = currentScrollY;
-    });
-  }
-
+  
   // ===== Accordion =====
   document.querySelectorAll('.accordion-header').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -249,13 +208,8 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-  // ===== Load Footer =====
-  fetch('./footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
 </script>
+<script src="./js/components.js"></script>
 <script src="notices.js"></script>
 </body>
 </html>

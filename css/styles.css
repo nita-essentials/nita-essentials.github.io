@@ -37,16 +37,19 @@ body {
 }
 
 /* ===== NAVIGATION ===== */
-nav {
-  background: var(--navy);
+#nav {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+#nav nav {
+  background: var(--navy);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   transition: transform 0.3s ease;
 }
 
-nav.nav-hidden {
+#nav nav.nav-hidden {
   transform: translateY(-100%);
 }
 
@@ -112,6 +115,16 @@ nav.nav-hidden {
   background: white;
   border-radius: 2px;
   transition: all 0.25s;
+}
+
+/* academis navbar */
+#academics-nav {
+  padding: 0.5rem 1rem; 
+  top: 60px; 
+  position: sticky; 
+  transition: top 0.3s ease; 
+  z-index: 99;  
+  backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
 /* ===== LAYOUT ===== */
@@ -861,6 +874,7 @@ footer {
   .stats-inner { gap: 1.5rem; }
 
   /* Nav Of the Acedemic section */
+
   #academics-nav .filter-bar {
     flex-wrap: nowrap;
     overflow-x: auto;
