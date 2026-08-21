@@ -404,6 +404,14 @@ body {
 #backToTopBtn:active {
   transform: scale(0.95);
 }
+/* ========= Read More Button ======== */
+
+/* 
+Removes read more button for desktop devices
+*/
+.read-more-btn {
+  display: none;
+}
 
 html {
   scroll-behavior: smooth;
@@ -1019,12 +1027,6 @@ footer {
     width:100%;
     font-size:12px;
     padding:8px;
-}
-/* 
-Removes read more button for desktop devices
-*/
-.read-more-btn {
-  display: none;
 }
 }
 
